@@ -9,15 +9,10 @@ We need to
 3. Update column L of the spreadsheet to record that the user is signed in.
 """
 
-SHEET_URL = 'https://docs.google.com/spreadsheets/d/1kVZF0zbstPRkDDexa2D03Sibeg1HEtdb5fBjV_5Cw98/edit?usp=sharing'
-
 FIRST_AND_LAST_NAME = re.compile(r'[A-Z ,\.\'-]+')
 
 print spreadsheet_functions.get_names()
 names = [string.lower() for string in spreadsheet_functions.get_names()]
-
-def register_name(name):
-        "take a name and set that person as registered in the sheet"
 
 def index_of(list, item):
     try:
