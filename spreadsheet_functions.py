@@ -1,4 +1,4 @@
-import sheets_api_quickstart as 
+import sheets_api_quickstart as sheets
 from config import MINNEHACK_ID
 
 service = sheets.get_service()
