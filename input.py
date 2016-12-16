@@ -2,16 +2,8 @@ import fileinput
 import re
 import spreadsheet_functions
 
-"""
-We need to
-1. read first & last name from scanned card.
-2. Locate row in google sheet that contains this name, ignoring case in format `<first-name>, <last-name>`.
-3. Update column L of the spreadsheet to record that the user is signed in.
-"""
-
 FIRST_AND_LAST_NAME = re.compile(r'[A-Z ,\.\'-]+')
 
-print spreadsheet_functions.get_names()
 names = [string.lower() for string in spreadsheet_functions.get_names()]
 
 def index_of(list, item):
