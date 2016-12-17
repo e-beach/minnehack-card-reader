@@ -22,8 +22,13 @@ def parse(line):
         raise ParseException
     # Grab the last group. There may be useless matches before the end.
     name = matches[-1]
-    # drop final initial, which is for middle name
-    first_and_last = name.split()[0] + " " + name.split()[1]
+    # Drop final initial, which is for middle name.
+    if index_of(name, ',') != -1:
+        # UMN ID
+        first_and_last = name.split()[0] + " " + name.split()[1]
+    else:
+        # Driver's license
+        first_and_last = name.split()[2] + ", " + name.split()[0]
     # Convert to lower case.
     formatted_name = first_and_last.lower()
     return formatted_name
